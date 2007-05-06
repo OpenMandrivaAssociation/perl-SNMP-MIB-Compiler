@@ -1,7 +1,7 @@
 %define	module	SNMP-MIB-Compiler
 %define	name	perl-%{module}
 %define	version	0.06
-%define	release	%mkrel 7
+%define	release	%mkrel 8
 
 Name:		%{name}
 Version:	%{version}
@@ -16,7 +16,6 @@ BuildRequires:	perl-devel perl-Data-Compare
 Requires:	perl >= 0:5.005 perl-Data-Compare
 BuildArch:	noarch
 
-
 %description
 SNMP::MIB::Compiler is a MIB compiler that
 fully supports both SMI(v1) and SMIv2. This
@@ -30,6 +29,8 @@ later use.
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
+
+%check
 make test
 
 %install
