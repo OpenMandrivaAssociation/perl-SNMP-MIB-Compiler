@@ -1,7 +1,7 @@
 %define	module	SNMP-MIB-Compiler
 %define	name	perl-%{module}
 %define	version	0.06
-%define	release	%mkrel 8
+%define	release	%mkrel 10
 
 Name:		%{name}
 Version:	%{version}
