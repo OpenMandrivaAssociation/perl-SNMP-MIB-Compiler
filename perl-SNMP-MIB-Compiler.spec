@@ -11,10 +11,11 @@ Group:		Development/Perl
 Summary:	A MIB Compiler for perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/SNMP/%{module}-%{version}.tar.bz2
 Url:		http://www.cpan.org
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	perl-devel perl-Data-Compare
+BuildRequires:	perl(File::Find::Rule)
 Requires:	perl >= 0:5.005 perl-Data-Compare
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 SNMP::MIB::Compiler is a MIB compiler that
