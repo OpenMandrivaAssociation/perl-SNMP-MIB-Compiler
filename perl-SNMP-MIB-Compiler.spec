@@ -1,21 +1,22 @@
-%define	module	SNMP-MIB-Compiler
-%define	name	perl-%{module}
-%define	version	0.06
-%define	release	%mkrel 11
+%define	upstream_name	 SNMP-MIB-Compiler
+%define	upstream_version 0.06
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-License:	GPL or Artistic
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	A MIB Compiler for perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/SNMP/%{module}-%{version}.tar.bz2
-Url:		http://www.cpan.org
-BuildRequires:	perl-devel perl-Data-Compare
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/SNMP/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildRequires:	perl-Data-Compare
 BuildRequires:	perl(File::Find::Rule)
-Requires:	perl >= 0:5.005 perl-Data-Compare
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
+
+Requires:	perl-Data-Compare
 
 %description
 SNMP::MIB::Compiler is a MIB compiler that
@@ -25,7 +26,7 @@ or not) or load already compiled MIBs for
 later use.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -48,4 +49,3 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/SNMP
 %{_bindir}/*
 %{_mandir}/*/*
-
