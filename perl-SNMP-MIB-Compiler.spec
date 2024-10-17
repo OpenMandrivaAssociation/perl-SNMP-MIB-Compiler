@@ -8,7 +8,7 @@ Release:	4
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	A MIB Compiler for perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/SNMP/%{upstream_name}-%{upstream_version}.tar.bz2
 
 BuildRequires:	perl-devel
