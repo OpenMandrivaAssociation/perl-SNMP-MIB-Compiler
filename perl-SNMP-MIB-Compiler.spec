@@ -1,15 +1,13 @@
 %define	upstream_name	 SNMP-MIB-Compiler
-%define	upstream_version 0.06
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.06
+Release:	6
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	A MIB Compiler for perl
 Url:		https://metacpan.org/dist/SNMP-MIB-Compiler
-Source0:	https://cpan.metacpan.org/authors/id/F/FT/FTASSIN/SNMP-MIB-Compiler-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/F/FT/FTASSIN/SNMP-MIB-Compiler-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -27,7 +25,7 @@ or not) or load already compiled MIBs for
 later use.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -50,9 +48,7 @@ make test
 %changelog
 * Mon Aug 03 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.60.0-1mdv2010.0
 + Revision: 408046
-- rebuild using %%perl_convert_version
-
-* Wed Oct 01 2008 Oden Eriksson <oeriksson@mandriva.com> 0.06-11mdv2009.0
+- rebuild using %0.06 Wed Oct 01 2008 Oden Eriksson <oeriksson@mandriva.com> 0.06-11mdv2009.0
 + Revision: 290444
 - fix deps
 - rebuild
