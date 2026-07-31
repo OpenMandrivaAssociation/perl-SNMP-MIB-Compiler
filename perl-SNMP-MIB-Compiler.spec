@@ -2,7 +2,7 @@
 %define upstream_version 0.06
 Name:		perl-%{upstream_name}
 Version:	0.06
-Release:	12
+Release:	1
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -30,8 +30,7 @@ later use.
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make
-
+%make_build
 %check
 # soft: do not fail package on test failures
 set +e
@@ -41,7 +40,7 @@ make test || :
 %makeinstall_std
 
 %files
-%doc MANIFEST README
+%doc README
 %{perl_vendorlib}/Bundle
 %{perl_vendorlib}/SNMP
 %{_bindir}/*
